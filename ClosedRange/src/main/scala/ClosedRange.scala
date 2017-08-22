@@ -7,6 +7,8 @@ class ClosedRange(val low: Int, val high: Int) {
 
   def contains(base: Int): Boolean = if (low <= base && high >= base) true else false
 
+  def containAll(list: List[Int]): Boolean = list.forall(Range(low, high + 1).contains)
+
   def equals(range: ClosedRange): Boolean = if (range.low == low && range.high == high) true else false
 
   def isConnectedTo(range: ClosedRange): Boolean = {

@@ -12,10 +12,12 @@ object RangeMain extends App {
   val openRange = new OpenRange(3, 8)
   println("open range: " + openRange.toString)
   println("open range: " + openRange.contains(3))
-  
+
   val lClosedROpenRange: LClosedROpenRange = new LClosedROpenRange(3, 8)
   val lOpenRClosedRange: LOpenRClosedRange = new LOpenRClosedRange(4, 5)
   println("left-closed right-open range: " + lClosedROpenRange.toString)
   println("left-open right-closed range: " + lOpenRClosedRange.toString)
   println(s"closed range: ${range.isConnectedTo(range2)}")
+
+  println(s"closed range containsAll: ${range.containAll(List(5, 6))}")
 }
