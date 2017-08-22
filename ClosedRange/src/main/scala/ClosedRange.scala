@@ -9,5 +9,9 @@ class ClosedRange(val low: Int, val high: Int) {
 
   def equals(range: ClosedRange): Boolean = if (range.low == low && range.high == high) true else false
 
+  def isConnectedTo(range: ClosedRange): Boolean = {
+    if (contains(range.low) || contains(range.high) || (!contains(range.low) && !contains(range.high))) true else false
+  }
+
   override def toString: String = s"[$low,$high]"
 }
