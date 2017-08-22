@@ -2,7 +2,7 @@ import OpenClosedRange.{LClosedROpenRange, LOpenRClosedRange}
 
 object RangeMain extends App {
   val range: ClosedRange = new ClosedRange(3, 8)
-  val range2: ClosedRange = new ClosedRange(1, 10)
+  val range2: ClosedRange = new ClosedRange(4, 12)
   println("closed range: " + range.getLowerEndPoint)
   println("closed range: " + range.getHigherEndPoint)
   println("closed range: " + range.toString)
@@ -19,5 +19,7 @@ object RangeMain extends App {
   println("left-open right-closed range: " + lOpenRClosedRange.toString)
   println(s"closed range: ${range.isConnectedTo(range2)}")
 
-  println(s"closed range containsAll: ${range.containAll(List(5, 6))}")
+  println(s"closed range containsAll: ${range.containAll(List(6, -1))}")
+  println(s"closed range getIntersection: ${range.getIntersection(range2)}")
+  println(s"new closed range: ${range.parse("[3,8]")}")
 }
