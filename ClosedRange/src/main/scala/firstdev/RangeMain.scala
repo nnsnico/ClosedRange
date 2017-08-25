@@ -1,4 +1,6 @@
-import OpenClosedRange.{LClosedROpenRange, LOpenRClosedRange}
+package firstdev
+
+import firstdev.OpenClosedRange.{LClosedROpenRange, LOpenRClosedRange}
 
 object RangeMain extends App {
   val range: ClosedRange = new ClosedRange(3, 8)

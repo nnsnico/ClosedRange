@@ -1,3 +1,5 @@
+package firstdev
+
 class OpenRange(low: Int, high: Int) extends ClosedRange(low, high) {
   require(low < high)
 
