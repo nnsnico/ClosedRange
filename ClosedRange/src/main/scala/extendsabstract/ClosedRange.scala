@@ -1,21 +1,23 @@
 package extendsabstract
 
-class ClosedRange(low: Int, high: Int) extends AbstRange {
-  require(low < high)
-
-  override def getLowerEndPoint: Int = low
-
-  override def getHigherEndPoint: Int = high
-
-  override def getIntersection(range: AbstRange) =
-    new ClosedRange(low max range.getLowerEndPoint, high min range.getHigherEndPoint)
-
-  override def contains(base: Int): Boolean = if(low <= base && high >= base) true else false
-
-  override def parse(s: String): AbstRange = {
-    val parsedValue = s.trim.tail.init.split(",")
-    new ClosedRange(parsedValue(0).toInt, parsedValue(1).toInt)
+object ClosedRange {
+  def parse(s: String): ClosedRange = {
+    val parsed = s.trim.tail.init.split(",")
+    new ClosedRange(parsed(0).toInt, parsed(1).toInt)
   }
 
-  override def toString = s"[$low,$high]"
+  class ClosedRange(low: Int, high: Int) extends AbstRange {
+    require(low < high)
+
+    override def getLowerEndPoint: Int = low
+
+    override def getHigherEndPoint: Int = high
+
+    override def getIntersection(range: AbstRange) =
+      new ClosedRange(low max range.getLowerEndPoint, high min range.getHigherEndPoint)
+
+    override def contains(base: Int): Boolean = if (low <= base && high >= base) true else false
+
+    override def toString = s"[$low,$high]"
+  }
 }
