@@ -20,6 +20,4 @@ abstract class AbstRange {
     if (contains(range.getLowerEndPoint) || contains(range.getHigherEndPoint) ||
       (!contains(range.getLowerEndPoint) && !contains(range.getHigherEndPoint))) true else false
   }
-
-  def parse(s: String): AbstRange
 }
