@@ -1,6 +1,10 @@
 package extendsabstract
 
-import extendsabstract.OpenClosedRange.{LClosedROpenRange, LOpenRClosedRange}
+import extendsabstract.ClosedRange.ClosedRange
+import extendsabstract.OpenClosedRange.LClosedROpenRange.LClosedROpenRange
+import extendsabstract.OpenClosedRange.LOpenRClosedRange.LOpenRClosedRange
+import extendsabstract.OpenClosedRange.LOpenRClosedRange
+import extendsabstract.OpenRange.OpenRange
 
 object RangeMain extends App {
   val cRange: ClosedRange = new ClosedRange(3, 8)
@@ -23,9 +27,11 @@ object RangeMain extends App {
        |                            : low = ${lClosedROpen.getLowerEndPoint}
        |                            : high = ${lClosedROpen.getHigherEndPoint}
      """.stripMargin)
-  val lOpenRClose: LOpenRClosedRange = new LOpenRClosedRange(3, 8)
+  var lOpenRClose: LOpenRClosedRange = new LOpenRClosedRange(3, 8)
   println(
     s"""Left Open Right Closed Range: ${lOpenRClose.toString}
-       |                            : parsed ${lOpenRClose.parse("(3,8]")}
+       |                            : parsed("(4,10]")  = ${lOpenRClose = LOpenRClosedRange.parse("(4,10]"); lOpenRClose.toString}
+       |                            : low = ${lOpenRClose.getLowerEndPoint}
+       |                            : high = ${lOpenRClose.getHigherEndPoint}
      """.stripMargin)
 }
