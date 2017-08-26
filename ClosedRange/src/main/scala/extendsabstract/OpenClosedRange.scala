@@ -15,6 +15,8 @@ object OpenClosedRange {
       val parsedValue = s.trim.tail.init.split(",")
       new LClosedROpenRange(parsedValue(0).toInt, parsedValue(1).toInt)
     }
+
+    override def toString: String = s"[$low, $high)"
   }
 
   class LOpenRClosedRange(low: Int, high: Int) extends AbstRange {
@@ -28,8 +30,10 @@ object OpenClosedRange {
       new LClosedROpenRange(low max range.getLowerEndPoint, high min range.getHigherEndPoint)
 
     override def parse(s: String): AbstRange = {
-      val parsedValue = s.trim.tail.init
+      val parsedValue = s.trim.tail.init.split(",")
       new LOpenRClosedRange(parsedValue(0).toInt, parsedValue(1).toInt)
     }
+
+    override def toString: String = s"($low, $high]"
   }
 }
