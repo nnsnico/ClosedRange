@@ -1,0 +1,5 @@
+package extendsabstract
+
+object RangeMain {
+
+}
