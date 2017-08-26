@@ -2,6 +2,8 @@ package extendsabstract
 
 object OpenClosedRange {
   class LClosedROpenRange(low: Int, high: Int) extends AbstRange {
+    require(low < high)
+
     override def getLowerEndPoint: Int = low
 
     override def getHigherEndPoint: Int = high
@@ -16,6 +18,8 @@ object OpenClosedRange {
   }
 
   class LOpenRClosedRange(low: Int, high: Int) extends AbstRange {
+    require(low < high)
+
     override def getLowerEndPoint: Int = low
 
     override def getHigherEndPoint: Int = high

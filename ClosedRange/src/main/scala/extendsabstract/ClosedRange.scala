@@ -1,6 +1,8 @@
 package extendsabstract
 
 class ClosedRange(low: Int, high: Int) extends AbstRange {
+  require(low < high)
+
   override def getLowerEndPoint: Int = low
 
   override def getHigherEndPoint: Int = high
