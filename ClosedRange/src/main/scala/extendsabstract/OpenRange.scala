@@ -10,6 +10,8 @@ class OpenRange(low: Int, high: Int) extends AbstRange {
   override def getIntersection(range: AbstRange): AbstRange =
     new ClosedRange(low max range.getLowerEndPoint, high min range.getHigherEndPoint)
 
+  override def contains(base: Int): Boolean = if (low < base && high > base) true else false
+
   override def parse(s: String): AbstRange = {
     val parsedValue = s.trim.tail.init.split(",")
     new OpenRange(parsedValue(0).toInt, parsedValue(1).toInt)

@@ -7,8 +7,7 @@ abstract class AbstRange {
 
   def getIntersection(range: AbstRange): AbstRange
 
-  def contains(base: Int): Boolean =
-    if (getLowerEndPoint <= base && getHigherEndPoint >= base) true else false
+  def contains(base: Int): Boolean
 
   def containAll(list: List[Int]): Boolean =
     list.forall(Range(getLowerEndPoint, getHigherEndPoint + 1).contains)
