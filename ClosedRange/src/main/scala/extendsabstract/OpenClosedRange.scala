@@ -3,7 +3,7 @@ package extendsabstract
 object OpenClosedRange {
   object LClosedROpenRange {
     def parse(s: String): LClosedROpenRange = {
-      val parsed = s.trim.tail.init.split(",")
+      val parsed = s.trim.tail.init.split("[,\\s]+")
       new LClosedROpenRange(parsed(0).toInt, parsed(1).toInt)
     }
 
@@ -25,7 +25,7 @@ object OpenClosedRange {
 
   object LOpenRClosedRange {
     def parse(s: String): LOpenRClosedRange = {
-      val parsed = s.trim.tail.init.split(",")
+      val parsed = s.trim.tail.init.split("[,\\s]+")
       new LOpenRClosedRange(parsed(0).toInt, parsed(1).toInt)
     }
 

@@ -2,7 +2,7 @@ package extendsabstract
 
 object OpenRange {
   def parse(s: String): OpenRange = {
-    val parsed = s.trim.tail.init.split(",")
+    val parsed = s.trim.tail.init.split("[,\\s]+")
     new OpenRange(parsed(0).toInt, parsed(1).toInt)
   }
 
